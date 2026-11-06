@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muhammad Saad – Cinematic Documentary Editor</title>
+<meta name="description" content="Documentary editing and motion graphics for YouTubers who want Vox and Johnny Harris style retention.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Fraunces:opsz,wght@9..144,350..600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0D0D0D;--panel:#141518;--line:#262830;--text:#DADDE3;--mute:#8F95A1;--gold:#C8A25E;--teal:#2C6B76;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{font-size:clamp(16px,.7vw + 8px,28px);overflow-x:clip;scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;overflow-x:clip;background:var(--ink);color:var(--text);font:400 1.0625rem/1.7 Fraunces,Georgia,"Times New Roman",serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.disp{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-stretch:125%;font-variation-settings:"wdth" 125}
+
+/* hero */
+.hero{position:relative;min-height:100svh;overflow:clip;perspective:1400px;display:grid;padding:0 clamp(1.25rem,5vw,4.5rem);background:radial-gradient(55% 50% at 72% 38%,rgba(44,107,118,.30),transparent 70%),var(--ink)}
+.nav{position:absolute;z-index:5;top:1.5rem;left:clamp(1.25rem,5vw,4.5rem);right:clamp(1.25rem,5vw,4.5rem);display:flex;justify-content:space-between;gap:1rem;font:600 .95rem Archivo,Arial,sans-serif}
+.nav a{text-decoration:none}
+.nav a:last-child{color:var(--gold)}
+.stage{position:relative;width:100%;max-width:none;margin:auto 0;padding:8rem 0 6rem;transform-style:preserve-3d;will-change:transform}
+.ghost{position:absolute;right:-1%;bottom:-3%;margin:0;font-weight:900;font-size:clamp(6rem,24vw,40rem);line-height:.8;color:transparent;-webkit-text-stroke:1.5px #3d424f;transform:translateZ(-260px);white-space:nowrap;pointer-events:none;user-select:none}
+.plane{position:absolute;left:-12%;right:-12%;bottom:-10%;height:62%;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 84px),repeating-linear-gradient(0deg,var(--line) 0 1px,transparent 1px 84px);transform:translateZ(-110px) rotateX(64deg);transform-origin:50% 100%;-webkit-mask-image:linear-gradient(to top,#000,transparent);mask-image:linear-gradient(to top,#000,transparent);opacity:.8}
+.copy{position:relative;transform:translateZ(70px)}
+h1{margin:0 0 1.6rem;max-width:14ch;font-weight:800;font-size:clamp(2.6rem,6.6vw,10rem);line-height:.96;letter-spacing:-.025em}
+.sub{max-width:36rem;margin:0 0 2.2rem;color:#B9BEC8;font-size:1.2rem}
+.btns{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center}
+.btn{display:inline-block;background:var(--gold);color:var(--ink);padding:.85rem 1.5rem;border-radius:2px;font:700 1rem Archivo,Arial,sans-serif;text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{background:#d8b472;transform:translateY(-2px)}
+.link{font:600 1rem Archivo,Arial,sans-serif;color:var(--text);text-underline-offset:6px}
+.frame{position:absolute;right:0;top:7rem;width:min(24vw,26rem);aspect-ratio:16/9;border:1px solid rgba(218,221,227,.38);background:rgba(13,13,13,.35);transform:translateZ(160px);display:flex;align-items:flex-end;justify-content:space-between;padding:.6rem .75rem;font:600 .8rem Archivo,Arial,sans-serif;font-variant-numeric:tabular-nums;color:#c4c8d0}
+.frame i{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:var(--gold);margin-right:.45rem;animation:rec 1.6s steps(2,jump-none) infinite}
+@keyframes rec{50%{opacity:.15}}
+@media(max-width:780px){.frame{display:none}.stage{padding-top:6.5rem}}
+
+/* sections */
+.wrap{max-width:80rem;margin:auto;padding:clamp(4rem,10vw,8rem) clamp(1.25rem,5vw,4.5rem)}
+h2{margin:0 0 2.5rem;max-width:20ch;font-weight:800;font-size:clamp(1.8rem,4.2vw,3.3rem);line-height:1.02;letter-spacing:-.02em}
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+@media(max-width:880px){.split{grid-template-columns:1fr}}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart .ax{stroke:var(--line);stroke-width:1}
+.chart .gr{fill:none;stroke:#6B717D;stroke-width:2;stroke-dasharray:6 7}
+.chart .gd{fill:none;stroke:var(--gold);stroke-width:3.5;stroke-linecap:round}
+.chart text{font:italic 400 14px Fraunces,Georgia,serif;fill:var(--mute)}
+.chart .gt{fill:var(--gold)}
+.js .chart .gd{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s cubic-bezier(.3,.7,.2,1)}
+.js .chart.in .gd{stroke-dashoffset:0}
+.note{margin:.9rem 0 0;font-size:.9rem;color:var(--mute)}
+.pts{list-style:none;margin:0;padding:0}
+.pts li{padding:1rem 0;border-top:1px solid var(--line)}
+.pts li:last-child{border-bottom:1px solid var(--line)}
+.pts b{display:block;font:700 1.05rem Archivo,Arial,sans-serif;margin-bottom:.15rem}
+.pts span{color:#B9BEC8}
+
+.reels{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+@media(max-width:760px){.reels{grid-template-columns:1fr}}
+.vbox{position:relative;aspect-ratio:16/9;background:#050505;border:1px solid #232b2f;border-radius:3px;overflow:hidden}
+.vbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#050505}
+.vbox video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#050505}
+.vbox .ph{display:none;position:absolute;inset:0;margin:0;place-items:center;text-align:center;padding:1rem;color:var(--mute);font:600 .95rem Archivo,Arial,sans-serif;background:linear-gradient(135deg,#1a2a2e,var(--panel))}
+.vbox.empty .ph{display:grid}
+.vbox.empty video{display:none}
+.reel h3{margin:.8rem 0 0;font:700 1.1rem Archivo,Arial,sans-serif}
+.sub2{margin:3.5rem 0 1.5rem;font:700 1.3rem Archivo,Arial,sans-serif}
+.shorts{display:grid;grid-template-columns:repeat(2,minmax(0,17rem));gap:1.75rem;justify-content:start}
+.vbox.v{aspect-ratio:9/16}
+.tracks{display:grid;gap:.9rem}
+.track{display:grid;grid-template-columns:3.5rem 1fr;gap:1.25rem}
+.tn{font:700 .9rem Archivo,Arial,sans-serif;color:var(--mute);border-right:1px solid var(--line);padding-top:1.3rem}
+.clip{--c:var(--gold);background:linear-gradient(90deg,rgba(44,107,118,.22),var(--panel) 70%);border:1px solid #232b2f;border-left:3px solid var(--c);border-radius:3px;padding:1.3rem 1.6rem;max-width:46rem}
+.t2 .clip{--c:#4F9AA8}
+.t3 .clip{--c:#9AA1AE}
+@media(min-width:900px){.t2 .clip{margin-left:9%}.t3 .clip{margin-left:18%}}
+.clip h3{margin:0 0 .3rem;font:700 1.3rem Archivo,Arial,sans-serif}
+.clip p{margin:0;color:#B9BEC8}
+
+.exp{margin:0}
+.exp div{display:grid;grid-template-columns:1fr 2fr;gap:.5rem 2rem;padding:1.15rem 0;border-top:1px solid var(--line)}
+.exp div:last-child{border-bottom:1px solid var(--line)}
+.exp dt{font:700 1.1rem Archivo,Arial,sans-serif}
+.exp dt small{display:block;font:400 .95rem Fraunces,Georgia,serif;color:var(--mute);margin-top:.1rem}
+.exp dd{margin:0;color:#B9BEC8}
+@media(max-width:700px){.exp div{grid-template-columns:1fr}}
+
+.cta{border-top:1px solid var(--line)}
+.cta h2{font-size:clamp(2.2rem,6vw,5rem);max-width:16ch}
+.mail{font:700 clamp(1.15rem,3.2vw,2rem) Archivo,Arial,sans-serif;color:var(--gold);text-underline-offset:8px;text-decoration-thickness:2px;word-break:break-all}
+footer{max-width:80rem;margin:auto;padding:1.5rem clamp(1.25rem,5vw,4.5rem) 2.5rem;color:var(--mute);font-size:.92rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.frame i{animation:none}.js .chart .gd{transition:none;stroke-dashoffset:0}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero" id="hero">
+  <nav class="nav" aria-label="Main">
+    <a href="#top">Muhammad Saad</a>
+    <a href="#contact">msaadraja811@gmail.com</a>
+  </nav>
+  <div class="stage" id="stage">
+    <p class="ghost disp" aria-hidden="true">retention</p>
+    <div class="plane" aria-hidden="true"></div>
+    <div class="copy" id="top">
+      <h1 class="disp">Documentary edits that keep viewers watching.</h1>
+      <p class="sub">I’m Muhammad Saad, a cinematic documentary editor and motion graphics artist. I cut for YouTubers who want Vox and Johnny Harris style storytelling.</p>
+      <div class="btns">
+        <a class="btn" href="#contact">Send your project</a>
+        <a class="link" href="#approach">See how I edit</a>
+      </div>
+    </div>
+    <div class="frame" aria-hidden="true"><span><i></i>REC</span><span id="tc">00:00:00:00</span></div>
+  </div>
+</header>
+
+<main>
+<section class="wrap" style="padding-bottom:0" id="reel">
+  <h2 class="disp">My edits</h2>
+  <div class="reels">
+    <!-- ===== VIDEO 1: sirf neeche wali src="videos/video1.mp4" line badalni hai ===== -->
+    <figure class="reel" style="margin:0">
+      <div class="vbox"><iframe src="https://player.vimeo.com/video/1244192927?dnt=1" title="The Reality of Men and Women in 2026 | Saad Incise" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe><p class="ph">Video 1 yahan chalegi</p></div>
+      <h3>The Reality of Men and Women in 2026 | Saad Incise</h3>
+    </figure>
+    <!-- ===== VIDEO 2: sirf neeche wali src="videos/video2.mp4" line badalni hai ===== -->
+    <figure class="reel" style="margin:0">
+      <div class="vbox"><iframe src="https://player.vimeo.com/video/1244204217?dnt=1" title="The Price of “Honor” in Pakistan | The Brutal Psychology of “Izzat” | Saad Incise" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe><p class="ph">Video 2 yahan chalegi</p></div>
+      <h3>The Price of “Honor” in Pakistan | The Brutal Psychology of “Izzat” | Saad Incise</h3>
+    </figure>
+  </div>
+  <h3 class="sub2">Reels, Shorts, and TikTok</h3>
+  <div class="shorts">
+    <!-- ===== SHORT 1: sirf neeche wali src="videos/short1.mp4" line badalni hai ===== -->
+    <figure class="reel" style="margin:0">
+      <div class="vbox v"><iframe src="https://player.vimeo.com/video/1244194745?dnt=1" title="Chop Chop Wok promotion" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe><p class="ph">Short 1 yahan chalegi</p></div>
+      <h3>Chop Chop Wok promotion</h3>
+    </figure>
+    <!-- ===== SHORT 2: sirf neeche wali src="videos/short2.mp4" line badalni hai ===== -->
+    <figure class="reel" style="margin:0">
+      <div class="vbox v"><iframe src="https://player.vimeo.com/video/1244194744?dnt=1" title="Series on Abbottabad" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe><p class="ph">Short 2 yahan chalegi</p></div>
+      <h3>Series on Abbottabad</h3>
+    </figure>
+  </div>
+</section>
+
+<section class="wrap" id="approach">
+  <h2 class="disp">Most videos lose viewers at the slow parts. I edit those out.</h2>
+  <div class="split">
+    <figure class="chart" id="chart" style="margin:0">
+      <svg viewBox="0 0 640 330" role="img" aria-label="Illustration: audience retention drops steadily in a typical edit and stays high in a retention-first edit">
+        <line class="ax" x1="40" y1="20" x2="40" y2="290"/>
+        <line class="ax" x1="40" y1="290" x2="620" y2="290"/>
+        <line class="ax" x1="40" y1="155" x2="620" y2="155" stroke-dasharray="2 8"/>
+        <path class="gr" d="M40 40 C110 70 150 150 230 192 S410 246 620 268"/>
+        <path class="gd" pathLength="1" d="M40 40 C120 50 210 66 310 80 S500 96 620 108"/>
+        <circle cx="620" cy="108" r="5" fill="#C8A25E"/>
+        <text x="48" y="22">Hook</text>
+        <text x="270" y="228">Typical edit: slow section, viewers leave</text>
+        <text class="gt" x="300" y="64">Retention-first edit</text>
+        <text x="40" y="314">Start</text>
+        <text x="570" y="314">End</text>
+      </svg>
+      <figcaption class="note">Illustration of the goal, not measured data.</figcaption>
+    </figure>
+    <ul class="pts">
+      <li><b>Retention-first pacing</b><span>Every cut, pause, and transition has a reason. Nothing stays on screen after it stops adding value.</span></li>
+      <li><b>Hooks that hold</b><span>The opening stops the scroll and gives viewers a reason to stay.</span></li>
+      <li><b>Visual storytelling</b><span>Kinetic typography, parallax depth, and motion graphics explain complex topics so viewers don’t drift.</span></li>
+      <li><b>Dynamic audio mixing</b><span>Music, voice, and sound design are balanced to carry the story.</span></li>
+      <li><b>Premium dark look</b><span>One consistent, cinematic style that makes your channel feel high-budget.</span></li>
+      <li><b>Smooth turnarounds</b><span>Proxy workflows keep heavy footage and long renders on schedule.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:0" id="services">
+  <h2 class="disp">What I edit</h2>
+  <div class="tracks">
+    <div class="track t1"><div class="tn">V1</div><div class="clip"><h3>Cinematic documentary editing</h3><p>Full edits for long-form YouTube documentaries and investigative videos. Story structure, pacing, color, and sound.</p></div></div>
+    <div class="track t2"><div class="tn">V2</div><div class="clip"><h3>Motion graphics</h3><p>Kinetic typography, animated maps and data, parallax effects, lower thirds, and title sequences.</p></div></div>
+    <div class="track t3"><div class="tn">V3</div><div class="clip"><h3>Short-form Reels, Shorts, and TikTok</h3><p>Fast cuts with strong hooks, captions, and platform-ready formatting.</p></div></div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:0" id="experience">
+  <h2 class="disp">Where I’ve done this</h2>
+  <dl class="exp">
+    <div><dt>Saad Incise<small>Creator and editor</small></dt><dd>Independent investigative documentaries and social commentary videos, from research to final cut.</dd></div>
+    <div><dt>Youth Perks<small>Video editor intern</small></dt><dd>Optimized Reels, Shorts, and TikToks for retention.</dd></div>
+    <div><dt>AUST Music Club<small>Media head</small></dt><dd>Promotional video campaigns and brand identity.</dd></div>
+    <div><dt>100 Smile Project<small>Media lead</small></dt><dd>Promotional video campaigns and brand identity.</dd></div>
+  </dl>
+</section>
+
+<section class="wrap cta" id="contact">
+  <h2 class="disp">Your footage is ready. Let’s make it hold attention.</h2>
+  <p style="margin:0 0 1rem;color:#B9BEC8">Send me your project and get a plan for your next video.</p>
+  <a class="mail" href="mailto:msaadraja811@gmail.com">msaadraja811@gmail.com</a>
+</section>
+</main>
+
+<footer><span>Muhammad Saad</span><span>Premiere Pro, After Effects, Photoshop</span></footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hero=document.getElementById('hero'),st=document.getElementById('stage'),tc=document.getElementById('tc');
+  var tx=0,ty=0,cx=0,cy=0,moved=false,t0=performance.now();
+  if(!reduce){
+    hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();moved=true;tx=((e.clientX-r.left)/r.width-.5)*2;ty=((e.clientY-r.top)/r.height-.5)*2});
+    hero.addEventListener('pointerleave',function(){moved=false});
+    (function loop(now){
+      var t=now-t0;
+      if(!moved){tx=Math.sin(t/2600)*.55;ty=Math.cos(t/3300)*.3}
+      cx+=(tx-cx)*.06;cy+=(ty-cy)*.06;
+      st.style.transform='rotateY('+(cx*9).toFixed(2)+'deg) rotateX('+(-cy*6).toFixed(2)+'deg)';
+      var f=Math.floor(t/1000*24),s=Math.floor(f/24),p=function(n){return String(n).padStart(2,'0')};
+      tc.textContent='00:'+p(Math.floor(s/60)%60)+':'+p(s%60)+':'+p(f%24);
+      requestAnimationFrame(loop);
+    })(t0);
+  }
+  var ch=document.getElementById('chart');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en,ob){en.forEach(function(e){if(e.isIntersecting){ch.classList.add('in');ob.disconnect()}})},{threshold:.35}).observe(ch);
+  }else{ch.classList.add('in')}
+})();
+</script>
+</body>
+</html>
